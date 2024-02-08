@@ -1,11 +1,13 @@
 'use strict'
+
+
 const container = document.querySelector('.container');
 
 
 let boxAmount = 1000;
 let currentColor;
 
-const colorBtns = ['red', 'black', 'green', 'pink'];
+const colorBtns = ['red', 'black', 'green', 'pink', 'reset'];
 
 
 function buildColorBtns() {
@@ -19,8 +21,11 @@ function buildColorBtns() {
     const selectColor = colorBtns[i];
     
     btn.addEventListener('click', function() {
-      currentColor = selectColor;
-      console.log(currentColor)
+      if(selectColor === 'reset') {
+        location.reload();
+      } else {
+        currentColor = selectColor;
+      }
     })
   };
 };
